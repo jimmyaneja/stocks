@@ -6,8 +6,8 @@ from finviz.main_func import *
 from csv import reader
 from twilio.rest import Client
 
-ACCOUNT_SID = "AC2494707f1daaaf22ff9d002e00458c29"
-AUTH_TOKEN = "faaae49027ebf2ba212d85785544dcfd"
+ACCOUNT_SID = "------------------------------"
+AUTH_TOKEN = "-------------------------------"
 
 #filters = ['exch_nasd','ta_change_u' ]  # Shows companies in the S&P500
 filters = ['ta_change_u' ]  # Shows companies in the S&P500
@@ -34,13 +34,13 @@ def main():
                     result.append(row[1])
 
 def send_mess_twlio(message):
-	numbers = ['+15108629817','+14087574675','+14088066239','+14087996321','+15103632391','+19728380311','+15104023623']
+	numbers = ['---------------------------------------------']
 	#numbers = ['+15108629817']
 	client = Client(ACCOUNT_SID, AUTH_TOKEN)
 	for number in numbers:
         	client.messages.create(
                 	to=number,
-                	from_="426366",
+                	from_="-------",
                 	body=message,
             )
 if __name__ == "__main__":
